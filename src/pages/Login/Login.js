@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
 
+import AuthContext from "../../context/AuthContext";
+
 function Login() {
+  const { loggedIn, setLoggedIn } = useContext(AuthContext);
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       email: "",
@@ -52,7 +55,10 @@ function Login() {
             </div>
             <nav>
               <p className="mt-5">
-                click to <Link to="/Register">Register</Link>
+                click to{" "}
+                <Link to="/Register">
+                  <span className="text-dark">Register</span>
+                </Link>
               </p>
             </nav>
           </form>
