@@ -25,7 +25,6 @@ function Login() {
               <div class="col-sm-10">
                 <input
                   name="email"
-                  readonly
                   class="form-control"
                   value={values.email}
                   onChange={handleChange}

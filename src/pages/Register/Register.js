@@ -40,7 +40,6 @@ function Register() {
               <div class="col-sm-10">
                 <input
                   name="userName"
-                  readonly
                   class="form-control"
                   value={values.userName}
                   onChange={handleChange}
