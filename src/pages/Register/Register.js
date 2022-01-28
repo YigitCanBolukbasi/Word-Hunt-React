@@ -2,10 +2,11 @@ import React from "react";
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
 
-function Login() {
+function Register() {
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       email: "",
+      userName: "",
       password: "",
     },
     onSubmit: (values) => {
@@ -16,7 +17,7 @@ function Login() {
     <div className="container">
       <div className="row">
         <div className="col-md-5 mx-auto mt-5">
-          <h1>Login</h1>
+          <h1>Register</h1>
           <form className="mt-5" onSubmit={handleSubmit}>
             <div class="mb-3 row">
               <label htmlFor="email" class="col-sm-2 col-form-label">
@@ -28,6 +29,20 @@ function Login() {
                   readonly
                   class="form-control"
                   value={values.email}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label htmlFor="userName" class="col-sm-2 col-form-label">
+                Username
+              </label>
+              <div class="col-sm-10">
+                <input
+                  name="userName"
+                  readonly
+                  class="form-control"
+                  value={values.userName}
                   onChange={handleChange}
                 />
               </div>
@@ -46,6 +61,7 @@ function Login() {
                 />
               </div>
             </div>
+
             <div>
               <button type="submit" className="btn btn-primary">
                 Submit
@@ -53,7 +69,7 @@ function Login() {
             </div>
             <nav>
               <p className="mt-5">
-                click to <Link to="/Register">Register</Link>
+                click to <Link to="/">Login</Link>
               </p>
             </nav>
           </form>
@@ -63,4 +79,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
