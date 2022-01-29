@@ -68,8 +68,7 @@ function Register() {
             </div>
             <nav>
               <p className="mt-5">
-                Click to{" "}
-                <Link to="/">
+                <Link to="/login">
                   <span className="text-dark">Register</span>
                 </Link>
               </p>

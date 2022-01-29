@@ -5,14 +5,15 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 
 function Login() {
-  const { loggedIn, setLoggedIn } = useContext(AuthContext);
+  const { handleLogin } = useContext(AuthContext);
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      console.log("login Submitted!");
+      handleLogin(values);
     },
   });
   return (
