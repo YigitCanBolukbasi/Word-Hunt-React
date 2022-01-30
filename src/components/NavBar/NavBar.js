@@ -21,9 +21,9 @@ function NavBar() {
   }, []);
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand text-light" href="#">
           WordHunt
         </a>
         <button
@@ -33,8 +33,7 @@ function NavBar() {
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -42,11 +41,10 @@ function NavBar() {
             {loggedIn && (
               <li class="nav-item">
                 <a
-                  class="nav-link active"
+                  class="nav-link active text-light"
                   aria-current="page"
                   href="#"
-                  onClick={handleLogout}
-                >
+                  onClick={handleLogout}>
                   Logout
                 </a>
               </li>

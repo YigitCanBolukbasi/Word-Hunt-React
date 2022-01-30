@@ -20,22 +20,36 @@ function Translate() {
                 class="form-select"
                 aria-label="Default select example"
                 value={targetLanguage}>
-                <option value="turkish">Turkish</option>
-                <option value="english">English</option>
+                <option value="tr">Turkish</option>
+                <option value="en">English</option>
               </select>
             </div>
           </div>
           <div className="col-md-4 bg-primary"></div>
+          <div className="col-md-2 pt-3 bg-dark">
+            <div className="container-select">
+              <select
+                onChange={(e) => setTargetLanguage(e.target.value)}
+                class="form-select"
+                aria-label="Default select example"
+                value={targetLanguage === "tr" ? "en" : "tr"}
+                disabled>
+                <option value="tr">Turkish</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+          </div>
           <div
-            className="col-md-6 bg-dark"
+            className="col-md-4 bg-dark"
             style={{ borderTopRightRadius: 7 }}></div>
         </div>
-        <div className="row mx-auto" style={{ height: 100 }}>
+        <div className="row mx-auto" style={{ height: 70 }}>
           <div
             className="col-md-6   bg-primary"
             style={{ borderBottomLeftRadius: 7 }}>
             <div class="form-floating mt-4">
               <input
+                style={{ height: 40 }}
                 type="email"
                 class="form-control"
                 id="floatingInputGrid"
@@ -49,8 +63,9 @@ function Translate() {
             style={{ borderBottomRightRadius: 7 }}>
             <div class="form-floating mt-4">
               <input
+                style={{ height: 40 }}
                 type="email"
-                class="form-control"
+                class="form-control mb-3"
                 id="floatingInputGrid"
                 value={"word"}
               />
