@@ -5,13 +5,14 @@ function LetterModal() {
 
   return (
     <div>
-      <div class="alert alert-danger mt-4" role="alert">
-        if you want to fix your words!Please click to{" "}
+      <div class="alert bg-warning mt-4 text-light" role="alert">
+        Correct the word with given characters game{" "}
         <button
           type="button"
           class="btn btn-primary"
           data-bs-toggle="modal"
-          data-bs-target="#exampleModal1">
+          data-bs-target="#exampleModal1"
+        >
           Launch!
         </button>
       </div>
@@ -21,7 +22,8 @@ function LetterModal() {
         id="exampleModal1"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -32,7 +34,8 @@ function LetterModal() {
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
-                aria-label="Close"></button>
+                aria-label="Close"
+              ></button>
             </div>
             <div class="modal-body">
               <h4>
@@ -46,7 +49,8 @@ function LetterModal() {
                     borderRadius: 7,
                     borderStyle: "solid",
                     borderWidth: 1,
-                  }}>
+                  }}
+                >
                   <span className="text-light ">holle wrlod</span>
                 </div>
                 <div
@@ -56,7 +60,8 @@ function LetterModal() {
                     borderRadius: 7,
                     borderStyle: "solid",
                     borderWidth: 1,
-                  }}>
+                  }}
+                >
                   <span className="text-light">hello world</span>
                 </div>
               </div>
@@ -72,7 +77,8 @@ function LetterModal() {
               <button
                 type="button"
                 class="btn btn-secondary"
-                data-bs-dismiss="modal">
+                data-bs-dismiss="modal"
+              >
                 Close
               </button>
               <button type="button" class="btn btn-primary">

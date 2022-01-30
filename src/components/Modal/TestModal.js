@@ -1,16 +1,58 @@
 import React, { useState } from "react";
+import axiosInstance from "../../utils/axios";
+import { toast } from "react-toastify";
 
 function TestModal() {
-  const [test, setTest] = useState("please select the meaningful option ");
+  const [question, setQuestion] = useState("");
+  const [questionID, setQuestionID] = useState("");
+  const [words, setWords] = useState([]);
+
+  function getQuestion() {
+    axiosInstance
+      .post("/api/v1/questions", {
+        question_type: "multiple_choice",
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          let data = response.data;
+          let words_array = [];
+          words_array.push(data.correct_word);
+          words_array.push(data.first_random_word);
+          words_array.push(data.second_random_word);
+          words_array = words_array.sort(() => Math.random() - 0.5);
+          setWords(words_array);
+          setQuestion(data.correct_word.en);
+          setQuestionID(data.id);
+        }
+      });
+  }
+
+  function submitQuestion(word_id) {
+    axiosInstance
+      .post(`/api/v1/questions/${questionID}/check`, {
+        word_id: word_id,
+      })
+      .then((response) => {
+        console.log(response);
+        if (response.data.answer == "correct") {
+          toast.success("Congrats!!");
+        } else {
+          toast.warn("Upss!!");
+        }
+      });
+  }
+
   return (
     <div>
       <div class="alert alert-info mt-4" role="alert">
-        if you want to fix your words!Please click to{" "}
+        Select the correct translation of the word game{" "}
         <button
           type="button"
           class="btn btn-primary"
           data-bs-toggle="modal"
-          data-bs-target="#exampleModal">
+          data-bs-target="#exampleModal"
+          onClick={getQuestion}
+        >
           Launch!
         </button>
       </div>
@@ -20,38 +62,38 @@ function TestModal() {
         id="exampleModal"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">
-                A little test for you
+                Select the correct one
               </h5>
               <button
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
-                aria-label="Close"></button>
+                aria-label="Close"
+              ></button>
             </div>
             <div class="modal-body">
-              <h5>{test}</h5>
+              <h5>{question}</h5>
               <div className="container">
                 <div className="row">
-                  <div className="col-md-12 mt-2 p-1">
-                    <button class="btn btn-info w-100" type="button">
-                      Button
-                    </button>
-                  </div>
-                  <div className="col-md-12 mt-2 p-1">
-                    <button class="btn btn-info w-100" type="button">
-                      Button
-                    </button>
-                  </div>
-                  <div className="col-md-12 mt-2 p-1">
-                    <button class="btn btn-info w-100" type="button">
-                      Button
-                    </button>
-                  </div>
+                  {words.map((word) => {
+                    return (
+                      <div className="col-md-12 mt-2 p-1" key={word?.id}>
+                        <button
+                          class="btn btn-info w-100"
+                          type="button"
+                          onClick={() => submitQuestion(word.id)}
+                        >
+                          {word?.tr}
+                        </button>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -59,11 +101,9 @@ function TestModal() {
               <button
                 type="button"
                 class="btn btn-secondary"
-                data-bs-dismiss="modal">
+                data-bs-dismiss="modal"
+              >
                 Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                Send To test
               </button>
             </div>
           </div>
