@@ -1,10 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axiosInstance from "../../utils/axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 function LetterModal() {
-  const [letter, setLetter] = useState("");
+  const [answer, setAnswer] = useState("");
+  const [randomizedWord, setRandomizedWord] = useState("");
+  const [translation, setTranslation] = useState("");
+  const [questionID, setQuestionID] = useState("");
+
+  function getQuestion() {
+    axiosInstance
+      .post("/api/v1/questions", {
+        question_type: "correction",
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          setRandomizedWord(response.data.wrong_string);
+          setTranslation(response.data.correct_word.tr);
+          setQuestionID(response.data.id);
+        }
+      });
+  }
+
+  function submitQuestion() {
+    document.getElementById("modal-input").disabled = true;
+    document.getElementById("submit-button").disabled = true;
+
+    axiosInstance
+      .post(`/api/v1/questions/${questionID}/check`, {
+        answer_string: answer,
+      })
+      .then((response) => {
+        if (response.data.answer == "correct") {
+          toast.success("Congrats!!");
+        } else {
+          toast.warn("Wrong Answer");
+        }
+      });
+  }
+
+  function cleanUp() {
+    setAnswer("");
+    document.getElementById("modal-input").disabled = null;
+    document.getElementById("submit-button").disabled = null;
+  }
 
   return (
-    <div>
+    <div id="letter-modal">
       <div class="alert bg-warning mt-4 text-light" role="alert">
         Correct the word with given characters game{" "}
         <button
@@ -12,6 +55,7 @@ function LetterModal() {
           class="btn btn-primary"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal1"
+          onClick={getQuestion}
         >
           Launch!
         </button>
@@ -43,33 +87,36 @@ function LetterModal() {
               </h4>
               <div className="row mt-5">
                 <div
-                  className="col-md-5 bg-primary mx-auto d-flex align-items-center"
+                  className="col-md-5 bg-primary mx-auto d-flex align-items-center justify-content-around"
                   style={{
-                    height: 130,
+                    height: 60,
                     borderRadius: 7,
                     borderStyle: "solid",
                     borderWidth: 1,
                   }}
                 >
-                  <span className="text-light ">holle wrlod</span>
+                  <strong className="text-light">Translate:</strong>
+                  <span className="text-light ">{translation}</span>
                 </div>
                 <div
                   className="col-md-5 bg-primary mx-auto d-flex align-items-center"
                   style={{
-                    height: 130,
+                    height: 60,
                     borderRadius: 7,
                     borderStyle: "solid",
                     borderWidth: 1,
                   }}
                 >
-                  <span className="text-light">hello world</span>
+                  <strong className="text-light">Randomized Word:</strong>
+                  <span className="text-light">{randomizedWord}</span>
                 </div>
               </div>
               <div className="mt-5">
                 <input
                   className="form-control"
-                  value={letter}
-                  onChange={(e) => setLetter(e.target.value)}
+                  value={answer}
+                  onChange={(e) => setAnswer(e.target.value)}
+                  id="modal-input"
                 />
               </div>
             </div>
@@ -78,11 +125,18 @@ function LetterModal() {
                 type="button"
                 class="btn btn-secondary"
                 data-bs-dismiss="modal"
+                onClick={cleanUp}
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
+              <button
+                type="button"
+                class="btn btn-primary"
+                onClick={submitQuestion}
+                id="submit-button"
+                href="/"
+              >
+                Submit
               </button>
             </div>
           </div>
