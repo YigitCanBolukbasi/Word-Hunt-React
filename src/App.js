@@ -1,19 +1,17 @@
 import React from "react";
 import "./App.css";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Container from "./pages/Container/Container";
 import { AuthProvider } from "./context/AuthContext";
 
 function App() {
-  console.log(
-    "client secret: ",
-    process.env.REACT_APP_CLIENT_SECRET,
-    "client id: ",
-    process.env.REACT_APP_CLIENT_ID
-  );
   return (
     <div className="App">
       <AuthProvider>
+        <ToastContainer />
         <Container />
       </AuthProvider>
     </div>
