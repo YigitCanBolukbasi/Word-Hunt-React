@@ -6,6 +6,7 @@ const axiosInstance = axios.create({
   baseURL: REACT_APP_BASE_URL,
   withCredentials: false,
 });
+
 const accessToken = localStorage.getItem("token");
 
 if (accessToken) {
