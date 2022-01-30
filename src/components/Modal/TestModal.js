@@ -37,10 +37,8 @@ function TestModal() {
         word_id: word_id,
       })
       .then((response) => {
-        console.log("reposnsee", response);
         if (response.data.answer == "correct") {
           toast.success("Congrats!!");
-          const correctAnswer = document.getElementById(answerid);
           setCorrectColor(true);
         } else {
           toast.warn("Upss!!");
@@ -74,24 +72,23 @@ function TestModal() {
 
   return (
     <div>
-      <div class="alert alert-info mt-4" role="alert">
-        Select the correct translation of the word game{" "}
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-          onClick={getQuestion}>
-          Launch!
-        </button>
-      </div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        onClick={getQuestion}
+      >
+        Launch!
+      </button>
 
       <div
         class="modal fade mt-4 p-5"
         id="exampleModal"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -102,7 +99,8 @@ function TestModal() {
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
-                aria-label="Close"></button>
+                aria-label="Close"
+              ></button>
             </div>
             <div class="modal-body">
               <h5>{question}</h5>
@@ -115,7 +113,8 @@ function TestModal() {
                           id={word?.id}
                           class={setColor(word)}
                           type="button"
-                          onClick={() => submitQuestion(word.id)}>
+                          onClick={() => submitQuestion(word.id)}
+                        >
                           {word?.tr}
                         </button>
                       </div>
@@ -129,7 +128,8 @@ function TestModal() {
                 type="button"
                 class="btn btn-secondary"
                 data-bs-dismiss="modal"
-                onClick={modalClose}>
+                onClick={modalClose}
+              >
                 Close
               </button>
             </div>

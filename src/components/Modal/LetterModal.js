@@ -48,19 +48,15 @@ function LetterModal() {
 
   return (
     <div id="letter-modal">
-      <div class="alert bg-warning mt-4 text-light" role="alert">
-        Correct the word with given characters game{" "}
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal1"
-          onClick={getQuestion}
-        >
-          Launch!
-        </button>
-      </div>
-
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal1"
+        onClick={getQuestion}
+      >
+        Launch!
+      </button>
       <div
         class="modal fade"
         id="exampleModal1"
