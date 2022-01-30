@@ -4,13 +4,17 @@ function TestModal() {
   const [test, setTest] = useState("please select the meaningful option ");
   return (
     <div>
-      <button
-        type="button"
-        class="btn btn-info"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal">
-        Ready to test ?
-      </button>
+      <div class="alert alert-info mt-4" role="alert">
+        if you want to fix your words!Please click to{" "}
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
+          Launch!
+        </button>
+      </div>
+
       <div
         class="modal fade mt-4 p-5"
         id="exampleModal"
