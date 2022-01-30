@@ -6,7 +6,7 @@ import LetterModal from "../../components/Modal/LetterModal";
 function Translate() {
   const [targetLanguage, setTargetLanguage] = useState("");
   const [word, setWord] = useState("");
-  console.log("word   :", word);
+  console.log("value", targetLanguage);
   return (
     <div>
       <div className="container">
@@ -14,27 +14,15 @@ function Translate() {
           <div
             className="col-md-2 pt-3 bg-primary"
             style={{ borderTopLeftRadius: 7 }}>
-            <div class="dropdown">
-              <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Choose Language
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Turkish
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    English
-                  </a>
-                </li>
-              </ul>
+            <div className="container-select">
+              <select
+                onChange={(e) => setTargetLanguage(e.target.value)}
+                class="form-select"
+                aria-label="Default select example"
+                value={targetLanguage}>
+                <option value="turkish">Turkish</option>
+                <option value="english">English</option>
+              </select>
             </div>
           </div>
           <div className="col-md-4 bg-primary"></div>
