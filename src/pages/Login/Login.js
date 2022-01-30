@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
+
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import AuthContext from "../../context/AuthContext";
 
@@ -15,6 +17,7 @@ function Login() {
       console.log("login Submitted!");
       handleLogin(values);
       setLoading(true);
+      toast.success("Loggged in successfully");
     },
   });
   return (

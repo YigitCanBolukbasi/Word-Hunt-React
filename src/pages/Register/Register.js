@@ -3,6 +3,7 @@ import { useFormik, validateYupSchema } from "formik";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Register() {
   let navigate = useNavigate();
@@ -25,6 +26,7 @@ function Register() {
           console.log(response);
           if (response.status === 201) {
             navigate("/login");
+            toast.success("Registered successfully");
           }
         });
     },

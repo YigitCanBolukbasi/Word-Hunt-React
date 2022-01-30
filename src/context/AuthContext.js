@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../utils/axios";
+import { toast } from "react-toastify";
 
 const AuthContext = createContext();
 
@@ -61,6 +62,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("token");
     setLoggedIn(false);
     navigate("/login");
+    toast.warn("Logged out");
   };
 
   const values = {

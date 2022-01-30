@@ -95,7 +95,7 @@ function Translate() {
             {addWord && (
               <button
                 type="button"
-                className="btn btn-md btn-light"
+                className="btn btn-md btn-primary mt-3"
                 onClick={handleSaveWord}>
                 Kelimeyi Kaydet
               </button>
@@ -136,10 +136,10 @@ function Translate() {
       </div>
       <div className="container">
         <div className="row mt-5">
-          <div className="col-md-4 mx-auto">
+          <div className="col-md-12 mx-auto">
             <TestModal />
           </div>
-          <div className="col-md-4 mx-auto">
+          <div className="col-md-12 mx-auto">
             <LetterModal />
           </div>
         </div>
