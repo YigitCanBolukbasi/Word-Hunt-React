@@ -1,8 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/AuthContext";
+import axiosInstance from "../../utils/axios";
 
 function NavBar() {
   const { handleLogout, loggedIn } = useContext(AuthContext);
+
+  function getUserMetrics() {
+    axiosInstance
+      .get("/api/v1/users/me")
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {});
+  }
+
+  useEffect(() => {
+    if (loggedIn) {
+      getUserMetrics();
+    }
+  }, []);
+
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">

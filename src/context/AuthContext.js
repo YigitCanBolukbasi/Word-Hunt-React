@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import axiosInstance from "../utils/axios";
 
 const AuthContext = createContext();
 
@@ -12,13 +13,34 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      setLoggedIn(true);
+      getMe();
+    } else {
+      navigate("/login");
     }
+    return setLoading(true);
   }, []);
 
+  const getMe = () => {
+    axiosInstance
+      .get("/api/v1/users/me")
+      .then((response) => {
+        if (response.status === 200) {
+          setLoggedIn(true);
+        } else {
+          localStorage.removeItem("token");
+          navigate("/login");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        localStorage.removeItem("token");
+        navigate("/login");
+      });
+  };
+
   const handleLogin = (credentials) => {
-    axios
-      .post("https://afternoon-atoll-54006.herokuapp.com/oauth/token", {
+    axiosInstance
+      .post("/oauth/token", {
         grant_type: "password",
         client_id: process.env.REACT_APP_CLIENT_ID,
         client_secret: process.env.REACT_APP_CLIENT_SECRET,
