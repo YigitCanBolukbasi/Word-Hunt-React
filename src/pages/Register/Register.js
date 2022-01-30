@@ -1,16 +1,32 @@
 import React from "react";
-import { useFormik } from "formik";
+import { useFormik, validateYupSchema } from "formik";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../utils/axios";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+  let navigate = useNavigate();
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       email: "",
-      userName: "",
+      username: "",
       password: "",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      axiosInstance
+        .post("/api/v1/users", {
+          user: {
+            username: values.username,
+            email: values.email,
+            password: values.password,
+          },
+        })
+        .then((response) => {
+          console.log(response);
+          if (response.status === 201) {
+            navigate("/login");
+          }
+        });
     },
   });
   return (
@@ -68,8 +84,9 @@ function Register() {
             </div>
             <nav>
               <p className="mt-5">
+                Do you have an account?{" "}
                 <Link to="/login">
-                  <span className="text-dark">Register</span>
+                  <span className="text-dark">Login</span>
                 </Link>
               </p>
             </nav>
