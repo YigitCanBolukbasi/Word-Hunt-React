@@ -8,7 +8,15 @@ import Translate from "../Translate/Translate";
 import AuthContext from "../../context/AuthContext";
 
 function Container() {
-  const { loggedIn } = useContext(AuthContext);
+  const { loggedIn, loading, setLoading } = useContext(AuthContext);
+  if (loggedIn) {
+    setLoading(false);
+  }
+
+  if (loading) {
+    return <div class="loader"></div>;
+  }
+
   return (
     <div>
       <NavBar />

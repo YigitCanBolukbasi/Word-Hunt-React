@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
 
 import AuthContext from "../../context/AuthContext";
 
 function Login() {
-  const { handleLogin } = useContext(AuthContext);
+  const { handleLogin, setLoading, loading } = useContext(AuthContext);
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       email: "",
@@ -14,6 +14,7 @@ function Login() {
     onSubmit: (values) => {
       console.log("login Submitted!");
       handleLogin(values);
+      setLoading(true);
     },
   });
   return (
