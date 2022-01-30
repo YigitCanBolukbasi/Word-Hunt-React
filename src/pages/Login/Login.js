@@ -57,7 +57,7 @@ function Login() {
             </div>
             <nav>
               <p className="mt-5">
-                click to{" "}
+                Don't have an account?{" "}
                 <Link to="/Register">
                   <span className="text-dark">Register</span>
                 </Link>
