@@ -8,7 +8,6 @@ const UserStats = () => {
   useEffect(() => {
     axiosInstance.get("/api/v1/users/me").then((response) => {
       setUserMetrics(response.data);
-      console.log(userMetrics);
     });
   }, []);
 

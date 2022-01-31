@@ -194,31 +194,26 @@ function Translate() {
         style={{ position: "fixed", bottom: 0 }}>
         <div className=" py-3 text-dark bg-primary">
           <span
+            className="text-light"
             style={{
               display: "block",
               marginBottom: 6,
-              position: "relative",
-              right: 400,
             }}>
             {" "}
             Git Hub profiles
           </span>
-          <span style={{ position: "relative", right: 350 }}>
-            <a className="text-light" href="https://github.com/sezeristif">
-              https://github.com/sezeristif
-            </a>
-          </span>
-          <span style={{ position: "relative", right: 150 }}>
-            <a className="text-light" href="https://github.com/sezeristif">
-              https://github.com/YigitCanBolukbasi
-            </a>
-          </span>
-          © 2020 Copyright :{" "}
-          <a
-            className="text-light"
-            href="https://damp-reaches-91415.herokuapp.com/login">
-            www.wordhunt.com
-          </a>
+          <div style={{ display: "flex", justifyContent: "space-around" }}>
+            <span>
+              <a className="text-light" href="https://github.com/sezeristif">
+                https://github.com/sezeristif
+              </a>
+            </span>
+            <span>
+              <a className="text-light" href="https://github.com/sezeristif">
+                https://github.com/YigitCanBolukbasi
+              </a>
+            </span>
+          </div>
         </div>
       </footer>
     </body>
