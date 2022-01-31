@@ -74,35 +74,32 @@ function TestModal() {
     <div>
       <button
         type="button"
-        class="btn btn-primary"
+        className="btn btn-primary"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
-        onClick={getQuestion}
-      >
+        onClick={getQuestion}>
         Launch!
       </button>
 
       <div
-        class="modal fade mt-4 p-5"
+        className="modal fade mt-4 p-5"
         id="exampleModal"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
+        aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
                 Select the correct one
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+                aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <h5>{question}</h5>
               <div className="container">
                 <div className="row">
@@ -111,10 +108,9 @@ function TestModal() {
                       <div className="col-md-12 mt-2 p-1" key={word?.id}>
                         <button
                           id={word?.id}
-                          class={setColor(word)}
+                          className={setColor(word)}
                           type="button"
-                          onClick={() => submitQuestion(word.id)}
-                        >
+                          onClick={() => submitQuestion(word.id)}>
                           {word?.tr}
                         </button>
                       </div>
@@ -123,13 +119,12 @@ function TestModal() {
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 data-bs-dismiss="modal"
-                onClick={modalClose}
-              >
+                onClick={modalClose}>
                 Close
               </button>
             </div>

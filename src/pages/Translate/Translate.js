@@ -76,7 +76,7 @@ function Translate() {
             <div className="container-select">
               <select
                 onChange={(e) => setFromLanguage(e.target.value)}
-                class="form-select"
+                className="form-select"
                 aria-label="Default select example"
                 value={fromLanguage}>
                 <option value="tr">Türkçe</option>
@@ -115,11 +115,11 @@ function Translate() {
           <div
             className="col-md-6   bg-primary"
             style={{ borderBottomLeftRadius: 7 }}>
-            <div class="form-floating mt-4">
+            <div className="form-floating mt-4">
               <input
                 style={{ height: 40, padding: "5px" }}
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="floatingInputGrid"
                 value={word}
                 onChange={(e) => {
@@ -131,11 +131,11 @@ function Translate() {
           <div
             className="col-md-6  bg-dark "
             style={{ borderBottomRightRadius: 7 }}>
-            <div class="form-floating mt-4">
+            <div className="form-floating mt-4">
               <input
                 style={{ height: 40, padding: "5px" }}
                 type="email"
-                class="form-control mb-3"
+                className="form-control mb-3"
                 id="floatingInputGrid"
                 value={translation}
               />
@@ -153,10 +153,10 @@ function Translate() {
         <p>Please translate a few words before starting the game </p>
         <div className="row my-5">
           <div className="col-md-6 mx-auto">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Select The Correct One</h5>
-                <p class="card-text">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Select The Correct One</h5>
+                <p className="card-text">
                   Choose the correct answer translation. All the words you will
                   see are from the words you have already added
                 </p>
@@ -165,10 +165,10 @@ function Translate() {
             </div>
           </div>
           <div className="col-md-6 mx-auto">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Fix The Word</h5>
-                <p class="card-text">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Fix The Word</h5>
+                <p className="card-text">
                   We have shuffled the letters of a random word from your words.
                   You should correct the word.
                 </p>
@@ -181,7 +181,7 @@ function Translate() {
 
       <UserStats />
 
-      <footer class="page-footer  bg-dark">
+      <footer className="page-footer  bg-dark">
         <div className="row">
           <div className="col-md-12 p-3 dark">
             <span style={{ display: "block", marginBottom: 6 }}>
@@ -203,7 +203,7 @@ function Translate() {
           </div>
         </div>
 
-        <div class=" py-3 text-dark bg-primary">
+        <div className=" py-3 text-dark bg-primary">
           © 2020 Copyright :{" "}
           <a
             className="text-light"

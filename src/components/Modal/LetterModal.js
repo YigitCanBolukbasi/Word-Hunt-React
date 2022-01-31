@@ -50,34 +50,31 @@ function LetterModal() {
     <div id="letter-modal">
       <button
         type="button"
-        class="btn btn-primary"
+        className="btn btn-primary"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal1"
-        onClick={getQuestion}
-      >
+        onClick={getQuestion}>
         Launch!
       </button>
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModal1"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
+        aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
                 Fix the word
               </h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+                aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <h4>
                 You already learned this word, we just want you to edit it.
               </h4>
@@ -89,8 +86,7 @@ function LetterModal() {
                     borderRadius: 7,
                     borderStyle: "solid",
                     borderWidth: 1,
-                  }}
-                >
+                  }}>
                   <strong className="text-light">Translate:</strong>
                   <span className="text-light ">{translation}</span>
                 </div>
@@ -101,8 +97,7 @@ function LetterModal() {
                     borderRadius: 7,
                     borderStyle: "solid",
                     borderWidth: 1,
-                  }}
-                >
+                  }}>
                   <strong className="text-light">Randomized Word:</strong>
                   <span className="text-light">{randomizedWord}</span>
                 </div>
@@ -116,22 +111,20 @@ function LetterModal() {
                 />
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 data-bs-dismiss="modal"
-                onClick={cleanUp}
-              >
+                onClick={cleanUp}>
                 Close
               </button>
               <button
                 type="button"
-                class="btn btn-primary"
+                className="btn btn-primary"
                 onClick={submitQuestion}
                 id="submit-button"
-                href="/"
-              >
+                href="/">
                 Submit
               </button>
             </div>
