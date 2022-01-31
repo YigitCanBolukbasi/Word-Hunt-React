@@ -6,6 +6,7 @@ import axiosInstance from "../../utils/axios";
 import TestModal from "../../components/Modal/TestModal";
 import LetterModal from "../../components/Modal/LetterModal";
 import UserStats from "../../components/UserStats/UserStats";
+import { left } from "@popperjs/core";
 
 function Translate() {
   const [fromLanguage, setFromLanguage] = useState("en");
@@ -59,15 +60,15 @@ function Translate() {
   }, [word]);
 
   return (
-    <div>
+    <body>
       <div className="container">
         <div className="row">
           <div className="col-md-12 col-sm-12 col-lg-12 col-12 mt-4 ">
             <h3>Translate</h3>
           </div>
         </div>
+        <hr />
       </div>
-      <hr />
       <div className="container">
         <div className="row mx-auto mt-5">
           <div
@@ -181,29 +182,30 @@ function Translate() {
 
       <UserStats />
 
-      <footer className="page-footer  bg-dark">
-        <div className="row">
-          <div className="col-md-12 col-lg-12 col-sm-12 col-12 p-3 dark">
-            <span style={{ display: "block", marginBottom: 6 }}>
-              {" "}
-              Git Hub profiles:
-            </span>
-            <span style={{ display: "block", marginBottom: 6 }}>
-              <a
-                className="text-light"
-                href="https://github.com/YigitCanBolukbasi">
-                https://github.com/YigitCanBolukbasi
-              </a>
-            </span>
-            <span style={{ display: "block", marginBottom: 6 }}>
-              <a className="text-light" href="https://github.com/sezeristif">
-                https://github.com/sezeristif
-              </a>
-            </span>
-          </div>
-        </div>
-
+      <footer
+        className=" w-100  bg-dark mt-5"
+        style={{ position: "fixed", bottom: 0 }}>
         <div className=" py-3 text-dark bg-primary">
+          <span
+            style={{
+              display: "block",
+              marginBottom: 6,
+              position: "relative",
+              right: 400,
+            }}>
+            {" "}
+            Git Hub profiles
+          </span>
+          <span style={{ position: "relative", right: 350 }}>
+            <a className="text-light" href="https://github.com/sezeristif">
+              https://github.com/sezeristif
+            </a>
+          </span>
+          <span style={{ position: "relative", right: 150 }}>
+            <a className="text-light" href="https://github.com/sezeristif">
+              https://github.com/YigitCanBolukbasi
+            </a>
+          </span>
           © 2020 Copyright :{" "}
           <a
             className="text-light"
@@ -212,7 +214,7 @@ function Translate() {
           </a>
         </div>
       </footer>
-    </div>
+    </body>
   );
 }
 

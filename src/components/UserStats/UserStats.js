@@ -16,7 +16,7 @@ const UserStats = () => {
     <div>
       <div>
         <div className="container">
-          <div className="row  my-5">
+          <div className="row  " style={{ marginBottom: 150, marginTop: 100 }}>
             <div className="col-md-6 mx-auto border border-primary rounded p-5">
               <table class="table table-striped">
                 <thead>
