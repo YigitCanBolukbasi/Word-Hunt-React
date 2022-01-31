@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import NavBar from "../../components/NavBar/NavBar";
-import Translate from "../Translate/Translate";
+import Dashboard from "../Dashboard/Dashboard";
 import AuthContext from "../../context/AuthContext";
 
 function Container() {
@@ -23,7 +23,7 @@ function Container() {
       <Routes>
         {loggedIn ? (
           <>
-            <Route path="/" element={<Translate />} />
+            <Route path="/" element={<Dashboard />} />
           </>
         ) : (
           <>

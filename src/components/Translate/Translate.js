@@ -1,37 +1,12 @@
 import React, { useState, useEffect } from "react";
-
 import { toast } from "react-toastify";
 import axiosInstance from "../../utils/axios";
 
-import TestModal from "../../components/Modal/TestModal";
-import LetterModal from "../../components/Modal/LetterModal";
-import UserStats from "../../components/UserStats/UserStats";
-import { left } from "@popperjs/core";
-
-function Translate() {
+const Translate = () => {
   const [fromLanguage, setFromLanguage] = useState("en");
   const [translation, setTranslation] = useState("");
   const [word, setWord] = useState("");
   const [addWord, setAddWord] = useState(false);
-
-  function handleSaveWord() {
-    const body = {};
-    body[fromLanguage] = word;
-
-    axiosInstance
-      .post("/api/v1/words", body)
-      .then((response) => {
-        if (response.status === 201) {
-          setWord("");
-          toast.success("Word saved successfully!");
-        } else {
-          toast.error("An error occured");
-        }
-      })
-      .catch((error) => {
-        toast.error("An error occured");
-      });
-  }
 
   useEffect(() => {
     if (word.length > 0) {
@@ -59,18 +34,31 @@ function Translate() {
     return () => clearTimeout(delay);
   }, [word]);
 
+  function handleSaveWord() {
+    const body = {};
+    body[fromLanguage] = word;
+
+    axiosInstance
+      .post("/api/v1/words", body)
+      .then((response) => {
+        if (response.status === 201) {
+          setWord("");
+          toast.success("Word saved successfully!");
+        } else {
+          toast.error("An error occured");
+        }
+      })
+      .catch(() => {
+        toast.error("An error occured");
+      });
+  }
+
   return (
-    <body>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12 col-sm-12 col-lg-12 col-12 mt-4 ">
-            <h3>Translate</h3>
-          </div>
-        </div>
-        <hr />
-      </div>
+    <div>
       <div className="container">
         <div className="row mx-auto mt-5">
+          <h3>Translate</h3>
+          <hr />
           <div
             className="col-md-2 col-sm-2 col-lg-2 col-2 pt-3 bg-primary"
             style={{ borderTopLeftRadius: 7 }}
@@ -151,95 +139,8 @@ function Translate() {
           </div>
         </div>
       </div>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12 col-lg-12 col-sm-12 col-12 mt-5 ">
-            <h3>Games</h3>
-          </div>
-        </div>
-        <hr />
-        <p>Please translate a few words before starting the game </p>
-        <div className="row my-5">
-          <div className="col-md-6 col-lg-6 col-sm-6 col-6 mx-auto">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Select The Correct One</h5>
-                <p className="card-text">
-                  Choose the correct answer translation. All the words you will
-                  see are from the words you have already added
-                </p>
-                <TestModal />
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 col-lg-6 col-sm-6 col-6 mx-auto">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Fix The Word</h5>
-                <p className="card-text">
-                  We have shuffled the letters of a random word from your words.
-                  You should correct the word.
-                </p>
-                <LetterModal />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12 col-sm-12 col-lg-12 col-12 ">
-            <h3>Stats</h3>
-          </div>
-        </div>
-        <hr />
-      </div>
-      <UserStats />
-
-      <footer
-        className=" w-100  bg-dark mt-5"
-        style={{ position: "fixed", bottom: 0 }}
-      >
-        <div className=" py-3 text-dark bg-primary">
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <span
-              className="text-light"
-              style={{
-                marginLeft: 10,
-              }}
-            >
-              {" "}
-              Created By:
-            </span>
-            <span
-              style={{
-                marginLeft: 10,
-              }}
-            >
-              <a
-                className="text-light"
-                href="https://www.linkedin.com/in/yi%C4%9Fit-can-b%C3%B6l%C3%BCkba%C5%9F%C4%B1-669218209/"
-              >
-                Yiğit Can Bölükbaşı
-              </a>
-            </span>
-            <span
-              style={{
-                marginLeft: 10,
-              }}
-            >
-              <a
-                className="text-light"
-                href="https://www.linkedin.com/in/sezer-istif/"
-              >
-                Sezer İstif
-              </a>
-            </span>
-          </div>
-        </div>
-      </footer>
-    </body>
+    </div>
   );
-}
+};
 
 export default Translate;

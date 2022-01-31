@@ -14,6 +14,8 @@ const UserStats = () => {
   return (
     <div>
       <div>
+        <h3>Stats</h3>
+        <hr />
         <div className="container">
           <div className="row  " style={{ marginBottom: 150, marginTop: 50 }}>
             <div className="col-md-6 mx-auto border border-primary rounded p-5">
