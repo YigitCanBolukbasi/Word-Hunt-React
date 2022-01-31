@@ -73,15 +73,17 @@ function Translate() {
         <div className="row mx-auto mt-5">
           <div
             className="col-md-2 col-sm-2 col-lg-2 col-2 pt-3 bg-primary"
-            style={{ borderTopLeftRadius: 7 }}>
+            style={{ borderTopLeftRadius: 7 }}
+          >
             <div className="container-select">
               <select
                 onChange={(e) => setFromLanguage(e.target.value)}
                 className="form-select"
                 aria-label="Default select example"
-                value={fromLanguage}>
-                <option value="tr">Türkçe</option>
-                <option value="en">İngilizce</option>
+                value={fromLanguage}
+              >
+                <option value="tr">Turkish</option>
+                <option value="en">English</option>
               </select>
             </div>
           </div>
@@ -93,20 +95,23 @@ function Translate() {
                 class="form-select"
                 aria-label="Default select example"
                 value={fromLanguage === "tr" ? "en" : "tr"}
-                disabled>
-                <option value="tr">Türkçe</option>
-                <option value="en">İngilizce</option>
+                disabled
+              >
+                <option value="tr">Turkish</option>
+                <option value="en">English</option>
               </select>
             </div>
           </div>
           <div
             className="col-md-4 col-sm-4 col-lg-4 col-4 bg-dark d-flex justify-content-end"
-            style={{ borderTopRightRadius: 7 }}>
+            style={{ borderTopRightRadius: 7 }}
+          >
             {addWord && (
               <button
                 type="button"
                 className="btn btn-md btn-primary mt-3"
-                onClick={handleSaveWord}>
+                onClick={handleSaveWord}
+              >
                 Kelimeyi Kaydet
               </button>
             )}
@@ -115,7 +120,8 @@ function Translate() {
         <div className="row mx-auto" style={{ height: 70 }}>
           <div
             className="col-md-6 col-lg-6 col-sm-6 col-6   bg-primary"
-            style={{ borderBottomLeftRadius: 7 }}>
+            style={{ borderBottomLeftRadius: 7 }}
+          >
             <div className="form-floating mt-4">
               <input
                 style={{ height: 40, padding: "5px" }}
@@ -131,7 +137,8 @@ function Translate() {
           </div>
           <div
             className="col-md-6 col-lg-6 col-sm-6 col-6  bg-dark "
-            style={{ borderBottomRightRadius: 7 }}>
+            style={{ borderBottomRightRadius: 7 }}
+          >
             <div className="form-floating mt-4">
               <input
                 style={{ height: 40, padding: "5px" }}
@@ -191,26 +198,41 @@ function Translate() {
 
       <footer
         className=" w-100  bg-dark mt-5"
-        style={{ position: "fixed", bottom: 0 }}>
+        style={{ position: "fixed", bottom: 0 }}
+      >
         <div className=" py-3 text-dark bg-primary">
-          <span
-            className="text-light"
-            style={{
-              display: "block",
-              marginBottom: 6,
-            }}>
-            {" "}
-            Git Hub profiles
-          </span>
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
-            <span>
-              <a className="text-light" href="https://github.com/sezeristif">
-                https://github.com/sezeristif
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <span
+              className="text-light"
+              style={{
+                marginLeft: 10,
+              }}
+            >
+              {" "}
+              Created By:
+            </span>
+            <span
+              style={{
+                marginLeft: 10,
+              }}
+            >
+              <a
+                className="text-light"
+                href="https://www.linkedin.com/in/yi%C4%9Fit-can-b%C3%B6l%C3%BCkba%C5%9F%C4%B1-669218209/"
+              >
+                Yiğit Can Bölükbaşı
               </a>
             </span>
-            <span>
-              <a className="text-light" href="https://github.com/sezeristif">
-                https://github.com/YigitCanBolukbasi
+            <span
+              style={{
+                marginLeft: 10,
+              }}
+            >
+              <a
+                className="text-light"
+                href="https://www.linkedin.com/in/sezer-istif/"
+              >
+                Sezer İstif
               </a>
             </span>
           </div>
