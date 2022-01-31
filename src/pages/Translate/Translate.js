@@ -62,7 +62,7 @@ function Translate() {
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-md-12 mt-4 ">
+          <div className="col-md-12 col-sm-12 col-lg-12 col-12 mt-4 ">
             <h3>Translate</h3>
           </div>
         </div>
@@ -71,7 +71,7 @@ function Translate() {
       <div className="container">
         <div className="row mx-auto mt-5">
           <div
-            className="col-md-2 pt-3 bg-primary"
+            className="col-md-2 col-sm-2 col-lg-2 col-2 pt-3 bg-primary"
             style={{ borderTopLeftRadius: 7 }}>
             <div className="container-select">
               <select
@@ -84,8 +84,8 @@ function Translate() {
               </select>
             </div>
           </div>
-          <div className="col-md-4 bg-primary"></div>
-          <div className="col-md-2 pt-3 bg-dark">
+          <div className="col-md-4 col-lg-4 col-sm-4 col-4 bg-primary"></div>
+          <div className="col-md-2 col-lg-2 col-sm-2 col-2 pt-3 bg-dark">
             <div className="container-select">
               <select
                 onChange={(e) => setFromLanguage(e.target.value)}
@@ -99,7 +99,7 @@ function Translate() {
             </div>
           </div>
           <div
-            className="col-md-4 bg-dark d-flex justify-content-end"
+            className="col-md-4 col-sm-4 col-lg-4 col-4 bg-dark d-flex justify-content-end"
             style={{ borderTopRightRadius: 7 }}>
             {addWord && (
               <button
@@ -113,7 +113,7 @@ function Translate() {
         </div>
         <div className="row mx-auto" style={{ height: 70 }}>
           <div
-            className="col-md-6   bg-primary"
+            className="col-md-6 col-lg-6 col-sm-6 col-6   bg-primary"
             style={{ borderBottomLeftRadius: 7 }}>
             <div className="form-floating mt-4">
               <input
@@ -129,7 +129,7 @@ function Translate() {
             </div>
           </div>
           <div
-            className="col-md-6  bg-dark "
+            className="col-md-6 col-lg-6 col-sm-6 col-6  bg-dark "
             style={{ borderBottomRightRadius: 7 }}>
             <div className="form-floating mt-4">
               <input
@@ -145,14 +145,14 @@ function Translate() {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-md-12 mt-5 ">
+          <div className="col-md-12 col-lg-12 col-sm-12 col-12 mt-5 ">
             <h3>Games</h3>
           </div>
         </div>
         <hr />
         <p>Please translate a few words before starting the game </p>
         <div className="row my-5">
-          <div className="col-md-6 mx-auto">
+          <div className="col-md-6 col-lg-6 col-sm-6 col-6 mx-auto">
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">Select The Correct One</h5>
@@ -164,7 +164,7 @@ function Translate() {
               </div>
             </div>
           </div>
-          <div className="col-md-6 mx-auto">
+          <div className="col-md-6 col-lg-6 col-sm-6 col-6 mx-auto">
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">Fix The Word</h5>
@@ -183,7 +183,7 @@ function Translate() {
 
       <footer className="page-footer  bg-dark">
         <div className="row">
-          <div className="col-md-12 p-3 dark">
+          <div className="col-md-12 col-lg-12 col-sm-12 col-12 p-3 dark">
             <span style={{ display: "block", marginBottom: 6 }}>
               {" "}
               Git Hub profiles:

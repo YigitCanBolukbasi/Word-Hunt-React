@@ -34,14 +34,16 @@ function Register() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-5 mx-auto mt-5">
+        <div className="col-md-5 col-lg-5 col-sm-5 col-5 mx-auto mt-5">
           <h1>Register</h1>
           <form className="mt-5" onSubmit={handleSubmit}>
             <div className="mb-3 row">
-              <label htmlFor="email" class="col-sm-2 col-form-label">
+              <label
+                htmlFor="email"
+                class="col-sm-2 col-md-2 col-lg-2 col-2 col-form-label">
                 Email
               </label>
-              <div className="col-sm-10">
+              <div className="col-sm-10 col-md-10 col-10 col-lg-10">
                 <input
                   name="email"
                   readonly
@@ -52,7 +54,9 @@ function Register() {
               </div>
             </div>
             <div className="mb-3 row">
-              <label htmlFor="userName" class="col-sm-2 col-form-label">
+              <label
+                htmlFor="userName"
+                class="col-sm-2 col-lg-2 col-md-2 col-2 col-form-label">
                 Username
               </label>
               <div className="col-sm-10">
@@ -65,10 +69,12 @@ function Register() {
               </div>
             </div>
             <div className="mb-3 row">
-              <label htmlFor="password" class="col-sm-2 col-form-label">
+              <label
+                htmlFor="password"
+                class="ol-sm-2 col-lg-2 col-md-2 col-2 col-form-label">
                 Password
               </label>
-              <div className="col-sm-10">
+              <div className="col-sm-10 col-md-10 col-10 col-lg-10">
                 <input
                   name="password"
                   type="password"

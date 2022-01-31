@@ -80,7 +80,7 @@ function LetterModal() {
               </h4>
               <div className="row mt-5">
                 <div
-                  className="col-md-5 bg-primary mx-auto d-flex align-items-center justify-content-around"
+                  className="col-md-5 col-lg-5 col-sm-5 col-5 bg-primary mx-auto d-flex align-items-center justify-content-around"
                   style={{
                     height: 60,
                     borderRadius: 7,
@@ -91,7 +91,7 @@ function LetterModal() {
                   <span className="text-light ">{translation}</span>
                 </div>
                 <div
-                  className="col-md-5 bg-primary mx-auto d-flex align-items-center"
+                  className="col-md-5 col-lg-5 col-sm-5 col-5 bg-primary mx-auto d-flex align-items-center"
                   style={{
                     height: 60,
                     borderRadius: 7,

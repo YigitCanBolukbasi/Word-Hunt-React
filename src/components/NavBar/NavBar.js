@@ -21,7 +21,7 @@ function NavBar() {
   }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-expand-sm navbar-expand-md navbar-light bg-primary">
       <div className="container-fluid">
         <a className="navbar-brand text-light" href="#">
           WordHunt

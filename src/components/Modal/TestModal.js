@@ -105,7 +105,9 @@ function TestModal() {
                 <div className="row">
                   {words.map((word) => {
                     return (
-                      <div className="col-md-12 mt-2 p-1" key={word?.id}>
+                      <div
+                        className="col-md-12 col-lg-12 col-sm-12 col-12 mt-2 p-1"
+                        key={word?.id}>
                         <button
                           id={word?.id}
                           className={setColor(word)}
