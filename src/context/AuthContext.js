@@ -37,8 +37,8 @@ export const AuthProvider = ({ children }) => {
       });
   };
 
-  const handleLogin = (credentials) => {
-    axiosInstance
+  const handleLogin = async (credentials) => {
+    await axiosInstance
       .post("/oauth/token", {
         grant_type: "password",
         client_id: process.env.REACT_APP_CLIENT_ID,
@@ -47,14 +47,22 @@ export const AuthProvider = ({ children }) => {
         password: credentials.password,
       })
       .then(function (response) {
+        console.log(response);
         if (response.status === 200) {
           setLoggedIn(true);
           localStorage.setItem("token", response.data.access_token);
+          toast.success("Logged In Successfully!");
           navigate("/");
+        } else {
+          toast.error("Email and/or Password not correct.");
         }
       })
       .catch(function (error) {
         console.log(error);
+        toast.error("Email or Password not correct.");
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 

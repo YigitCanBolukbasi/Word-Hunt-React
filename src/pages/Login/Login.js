@@ -7,17 +7,15 @@ import { toast } from "react-toastify";
 import AuthContext from "../../context/AuthContext";
 
 function Login() {
-  const { handleLogin, setLoading, loading } = useContext(AuthContext);
+  const { handleLogin, setLoading } = useContext(AuthContext);
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     onSubmit: (values) => {
-      console.log("login Submitted!");
-      handleLogin(values);
       setLoading(true);
-      toast.success("Loggged in successfully");
+      handleLogin(values);
     },
   });
   return (
@@ -29,7 +27,8 @@ function Login() {
             <div className="mb-3 row">
               <label
                 htmlFor="email"
-                className="col-sm-2 col-md-2 col-lg-2 col-2 col-form-label">
+                className="col-sm-2 col-md-2 col-lg-2 col-2 col-form-label"
+              >
                 Email
               </label>
               <div className="col-sm-10 col-md-10 col-10 col-lg-10">
@@ -44,7 +43,8 @@ function Login() {
             <div className="mb-3 row">
               <label
                 htmlFor="password"
-                className="col-sm-2 col-lg-2 col-md-2 col-2 col-form-label">
+                className="col-sm-2 col-lg-2 col-md-2 col-2 col-form-label"
+              >
                 Password
               </label>
               <div className="col-sm-10 col-md-10 col-10 col-lg-10">
