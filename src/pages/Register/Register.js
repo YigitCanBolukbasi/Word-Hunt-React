@@ -1,5 +1,5 @@
 import React from "react";
-import { useFormik, validateYupSchema } from "formik";
+import { useFormik } from "formik";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
@@ -35,61 +35,60 @@ function Register() {
     },
   });
   return (
-    <section class="vh-100">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-            <div class="card bg-dark text-white">
-              <div class="card-body p-5 text-center bg-primary">
-                <div class="mb-md-5 mt-md-4 pb-5">
+    <section>
+      <div className="container py-5 h-100">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div className="card bg-dark text-white">
+              <div className="card-body p-5 text-center bg-primary">
+                <div className="mb-md-5 mt-md-4 pb-5">
                   <form onSubmit={handleSubmit}>
-                    <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                    <p class="text-white-50 mb-5">
+                    <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
+                    <p className="text-white-50 mb-5">
                       Please enter your email and password
                     </p>
 
-                    <div class="form-outline form-white mb-4">
+                    <div className="form-outline form-white mb-4">
                       <input
                         name="email"
                         value={values.email}
                         onChange={handleChange}
-                        class="form-control form-control-lg"
+                        className="form-control form-control-lg"
                       />
-                      <label class="form-label" for="typeEmailX">
+                      <label className="form-label" for="typeEmailX">
                         Email
                       </label>
                     </div>
 
-                    <div class="form-outline form-white mb-4">
+                    <div className="form-outline form-white mb-4">
                       <input
                         name="username"
                         value={values.username}
                         onChange={handleChange}
-                        class="form-control form-control-lg"
+                        className="form-control form-control-lg"
                       />
-                      <label class="form-label" for="typeEmailX">
+                      <label className="form-label" for="typeEmailX">
                         Username
                       </label>
                     </div>
 
-                    <div class="form-outline form-white mb-4">
+                    <div className="form-outline form-white mb-4">
                       <input
                         value={values.password}
                         onChange={handleChange}
                         type="password"
                         name="password"
                         id="typePasswordX"
-                        class="form-control form-control-lg"
+                        className="form-control form-control-lg"
                       />
-                      <label class="form-label" for="typePasswordX">
+                      <label className="form-label" for="typePasswordX">
                         Password
                       </label>
                     </div>
 
                     <button
-                      class="btn btn-outline-light btn-lg px-5"
-                      type="submit"
-                    >
+                      className="btn btn-outline-light btn-lg px-5"
+                      type="submit">
                       Register
                     </button>
                   </form>
