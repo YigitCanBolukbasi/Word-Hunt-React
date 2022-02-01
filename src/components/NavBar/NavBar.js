@@ -5,15 +5,6 @@ import axiosInstance from "../../utils/axios";
 function NavBar() {
   const { handleLogout, loggedIn } = useContext(AuthContext);
 
-  function getUserMetrics() {
-    axiosInstance
-      .get("/api/v1/users/me")
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {});
-  }
-
   useEffect(() => {
     if (loggedIn) {
       getUserMetrics();
@@ -33,7 +24,8 @@ function NavBar() {
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -44,7 +36,8 @@ function NavBar() {
                   className="nav-link active text-light"
                   aria-current="page"
                   href="#"
-                  onClick={handleLogout}>
+                  onClick={handleLogout}
+                >
                   Logout
                 </a>
               </li>
