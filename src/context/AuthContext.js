@@ -50,7 +50,11 @@ export const AuthProvider = ({ children }) => {
         console.log(response);
         if (response.status === 200) {
           setLoggedIn(true);
-          localStorage.setItem("token", response.data.access_token);
+          let token = response.data.access_token;
+          localStorage.setItem("token", token);
+          axiosInstance.defaults.headers.common[
+            "Authorization"
+          ] = `Bearer ${token}`;
           toast.success("Logged In Successfully!");
           navigate("/");
         } else {
@@ -63,7 +67,6 @@ export const AuthProvider = ({ children }) => {
       })
       .finally(() => {
         setLoading(false);
-        window.location.reload();
       });
   };
 
