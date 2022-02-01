@@ -61,13 +61,15 @@ const Translate = () => {
           <hr />
           <div
             className="col-md-2 col-sm-2 col-lg-2 col-2 pt-3 bg-primary"
-            style={{ borderTopLeftRadius: 7 }}>
+            style={{ borderTopLeftRadius: 7 }}
+          >
             <div className="container-select">
               <select
                 onChange={(e) => setFromLanguage(e.target.value)}
                 className="form-select"
                 aria-label="Default select example"
-                value={fromLanguage}>
+                value={fromLanguage}
+              >
                 <option value="tr">Turkish</option>
                 <option value="en">English</option>
               </select>
@@ -81,7 +83,8 @@ const Translate = () => {
                 class="form-select"
                 aria-label="Default select example"
                 value={fromLanguage === "tr" ? "en" : "tr"}
-                disabled>
+                disabled
+              >
                 <option value="tr">Turkish</option>
                 <option value="en">English</option>
               </select>
@@ -89,13 +92,15 @@ const Translate = () => {
           </div>
           <div
             className="col-md-4 col-sm-4 col-lg-4 col-4 bg-dark d-flex justify-content-end"
-            style={{ borderTopRightRadius: 7 }}>
+            style={{ borderTopRightRadius: 7 }}
+          >
             {addWord && (
               <button
                 type="button"
                 className="btn btn-md btn-primary mt-3"
-                onClick={handleSaveWord}>
-                Kelimeyi Kaydet
+                onClick={handleSaveWord}
+              >
+                Save Word
               </button>
             )}
           </div>
@@ -103,7 +108,8 @@ const Translate = () => {
         <div className="row mx-auto" style={{ height: 70 }}>
           <div
             className="col-md-6 col-lg-6 col-sm-6 col-6   bg-primary"
-            style={{ borderBottomLeftRadius: 7 }}>
+            style={{ borderBottomLeftRadius: 7 }}
+          >
             <div className="form-floating mt-4">
               <input
                 style={{ height: 40, padding: "5px" }}
@@ -119,7 +125,8 @@ const Translate = () => {
           </div>
           <div
             className="col-md-6 col-lg-6 col-sm-6 col-6  bg-dark "
-            style={{ borderBottomRightRadius: 7 }}>
+            style={{ borderBottomRightRadius: 7 }}
+          >
             <div className="form-floating mt-4">
               <input
                 style={{ height: 40, padding: "5px" }}
