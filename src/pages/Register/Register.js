@@ -35,79 +35,78 @@ function Register() {
     },
   });
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-5 col-lg-5 col-sm-5 col-5 mx-auto mt-5">
-          <h1>Register</h1>
-          <form className="mt-5" onSubmit={handleSubmit}>
-            <div className="mb-3 row">
-              <label
-                htmlFor="email"
-                class="col-sm-2 col-md-2 col-lg-2 col-2 col-form-label"
-              >
-                Email
-              </label>
-              <div className="col-sm-10 col-md-10 col-10 col-lg-10">
-                <input
-                  name="email"
-                  readonly
-                  className="form-control"
-                  value={values.email}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="mb-3 row">
-              <label
-                htmlFor="userName"
-                class="col-sm-2 col-lg-2 col-md-2 col-2 col-form-label"
-              >
-                Username
-              </label>
-              <div className="col-sm-10">
-                <input
-                  name="userName"
-                  className="form-control"
-                  value={values.userName}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="mb-3 row">
-              <label
-                htmlFor="password"
-                class="ol-sm-2 col-lg-2 col-md-2 col-2 col-form-label"
-              >
-                Password
-              </label>
-              <div className="col-sm-10 col-md-10 col-10 col-lg-10">
-                <input
-                  name="password"
-                  type="password"
-                  className="form-control"
-                  value={values.password}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-dark text-white">
+              <div class="card-body p-5 text-center bg-primary">
+                <div class="mb-md-5 mt-md-4 pb-5">
+                  <form onSubmit={handleSubmit}>
+                    <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                    <p class="text-white-50 mb-5">
+                      Please enter your email and password
+                    </p>
 
-            <div>
-              <button type="submit" className="btn btn-primary">
-                Submit
-              </button>
+                    <div class="form-outline form-white mb-4">
+                      <input
+                        name="email"
+                        value={values.email}
+                        onChange={handleChange}
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="typeEmailX">
+                        Email
+                      </label>
+                    </div>
+
+                    <div class="form-outline form-white mb-4">
+                      <input
+                        name="username"
+                        value={values.username}
+                        onChange={handleChange}
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="typeEmailX">
+                        Username
+                      </label>
+                    </div>
+
+                    <div class="form-outline form-white mb-4">
+                      <input
+                        value={values.password}
+                        onChange={handleChange}
+                        type="password"
+                        name="password"
+                        id="typePasswordX"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="typePasswordX">
+                        Password
+                      </label>
+                    </div>
+
+                    <button
+                      class="btn btn-outline-light btn-lg px-5"
+                      type="submit"
+                    >
+                      Register
+                    </button>
+                  </form>
+                </div>
+
+                <div>
+                  Do you have an account?{" "}
+                  <Link to="/login">
+                    <span className="text-white-50 fw-bold">Login</span>
+                  </Link>
+                </div>
+              </div>
             </div>
-            <nav>
-              <p className="mt-5">
-                Do you have an account?{" "}
-                <Link to="/login">
-                  <span className="text-dark">Login</span>
-                </Link>
-              </p>
-            </nav>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
