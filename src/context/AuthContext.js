@@ -63,6 +63,7 @@ export const AuthProvider = ({ children }) => {
       })
       .finally(() => {
         setLoading(false);
+        window.location.reload();
       });
   };
 

@@ -53,7 +53,8 @@ function LetterModal() {
         className="btn btn-primary"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal1"
-        onClick={getQuestion}>
+        onClick={getQuestion}
+      >
         Launch!
       </button>
       <div
@@ -61,7 +62,8 @@ function LetterModal() {
         id="exampleModal1"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
@@ -72,7 +74,8 @@ function LetterModal() {
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="modal"
-                aria-label="Close"></button>
+                aria-label="Close"
+              ></button>
             </div>
             <div className="modal-body">
               <h4>
@@ -80,26 +83,28 @@ function LetterModal() {
               </h4>
               <div className="row mt-5">
                 <div
-                  className="col-md-5 col-lg-5 col-sm-5 col-5 bg-primary mx-auto d-flex align-items-center justify-content-around"
+                  className="col-md-5 col-lg-5 col-sm-5 col-5 bg-primary mx-auto"
                   style={{
                     height: 60,
                     borderRadius: 7,
                     borderStyle: "solid",
                     borderWidth: 1,
-                  }}>
+                  }}
+                >
                   <strong className="text-light">Translate:</strong>
-                  <span className="text-light ">{translation}</span>
+                  <p className="text-light ">{translation}</p>
                 </div>
                 <div
-                  className="col-md-5 col-lg-5 col-sm-5 col-5 bg-primary mx-auto d-flex align-items-center"
+                  className="col-md-5 col-lg-5 col-sm-5 col-5 bg-primary mx-auto"
                   style={{
                     height: 60,
                     borderRadius: 7,
                     borderStyle: "solid",
                     borderWidth: 1,
-                  }}>
+                  }}
+                >
                   <strong className="text-light">Randomized Word:</strong>
-                  <span className="text-light">{randomizedWord}</span>
+                  <p className="text-light">{randomizedWord}</p>
                 </div>
               </div>
               <div className="mt-5">
@@ -116,7 +121,8 @@ function LetterModal() {
                 type="button"
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
-                onClick={cleanUp}>
+                onClick={cleanUp}
+              >
                 Close
               </button>
               <button
@@ -124,7 +130,8 @@ function LetterModal() {
                 className="btn btn-primary"
                 onClick={submitQuestion}
                 id="submit-button"
-                href="/">
+                href="/"
+              >
                 Submit
               </button>
             </div>
