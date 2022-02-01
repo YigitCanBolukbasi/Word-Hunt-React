@@ -27,8 +27,7 @@ function Login() {
             <div className="mb-3 row">
               <label
                 htmlFor="email"
-                className="col-sm-2 col-md-2 col-lg-2 col-2 col-form-label"
-              >
+                className="col-sm-4 col-md-2 col-lg-2 col-4 col-form-label">
                 Email
               </label>
               <div className="col-sm-10 col-md-10 col-10 col-lg-10">
@@ -43,8 +42,7 @@ function Login() {
             <div className="mb-3 row">
               <label
                 htmlFor="password"
-                className="col-sm-2 col-lg-2 col-md-2 col-2 col-form-label"
-              >
+                className="col-sm-4 col-lg-2 col-md-2 col-4 col-form-label">
                 Password
               </label>
               <div className="col-sm-10 col-md-10 col-10 col-lg-10">
